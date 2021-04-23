@@ -1,0 +1,35 @@
+<table>
+    <td align="center">
+    <td width="200px"><a href="/characters/">Characters</a></td>
+    <td width="200px"><a href="/planets/">Planets</a></td>
+    <td width="200px"><a href="/dragonballs/">Dragonballs</a></td>
+    <td width="200px"><b>Techniques</b></td>
+    <td width="200px"><a href="/character_techniques/">Technique Masters</a></td>
+    </tr>
+</table>
+
+<h1>Current Techniques:</h1>
+
+<table>
+    <thead> 
+        <th>Name</th> 
+        <th>Damage</th>
+    </thead> 
+    <tbody> 
+        {{#each techniques}} 
+        <tr> 
+            <td>{{name}}</td>
+            <td>{{damage}}</td>
+            <td><button onclick="deleteTechnique({{id}})">Delete</button></td>
+            <td><a href="/techniques/{{id}}">Update</a></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+
+    <form id="addtechnique" action="/techniques" method="post">
+        Name: <input type="text" name="name"><br>
+        Damage: <input type="number" name="damage"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+</table> 

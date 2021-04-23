@@ -1,0 +1,40 @@
+<table>
+    <td align="center">
+    <td width="200px"><a href="/characters/">Characters</a></td>
+    <td width="200px"><a href="/planets/">Planets</a></td>
+    <td width="200px"><a href="/dragonballs/">Dragonballs</a></td>
+    <td width="200px"><a href="/techniques/">Techniques</a></td>
+    <td width="200px"><b>Technique Masters</b></td>
+    </tr>
+</table>
+
+<h1>Current Technique Masters:</h1>
+
+<table>
+    <thead>
+        <th>Character</th> 
+        <th>Technique</th> 
+    </thead> 
+    <tbody> 
+        {{#each character_techniques}} 
+        <tr> 
+            <td>{{fullname}}</td> 
+            <td>{{name}}</td> 
+        </tr> 
+        {{/each}} 
+    </tbody> 
+
+    <form id="addTechnique" action="/character_techniques" method="post">
+    Character: <select name="master" value="{{character.id}}"> 
+        {{#each characters}}
+        <option value="{{id}}">{{fullname}}</option>
+        {{/each}}
+    </select><br>
+    Technique: <select name="technique">
+        {{#each techniques}}
+        <option value="{{id}}">{{name}}</option>
+        {{/each}}
+    </select><br>
+    <input type="submit" value="Submit">
+    </form>
+</table> 

@@ -1,0 +1,57 @@
+<table>
+    <td align="center">
+        <td width="200px"><b>Characters</b></td>
+        <td width="200px"><a href="/planets/">Planets</a></td>
+        <td width="200px"><a href="/dragonballs/">Dragonballs</a></td>
+        <td width="200px"><a href="/techniques/">Techniques</a></td>
+        <td width="200px"><a href="/character_techniques/">Technique Masters</a></td>
+    </tr>
+</table>
+
+<h1>Current characters:</h1>
+{{#each foo}}
+{{this}}
+{{/each}}
+<form id="addcharacter" action="/characters" method="post">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="fullname"></td>
+        </tr>
+        <tr>
+            <td>Home:</td>
+            <td><select name="home">{{#each planets}}<option value="{{id}}">{{name}}</option>{{/each}}</select></td>
+        </tr>
+        <tr>
+            <td>Location:</td>
+            <td><select name="location">{{#each planets}}<option value="{{id}}">{{name}}</option>{{/each}}</select></td>
+        </tr>
+        <tr>
+            <td>Allegiance:</td>
+            <td><input type="text" name="allegiance"></td>
+        </tr>
+        <tr><td><input type="submit" value="Submit"></td></tr>
+    </table>
+</form>
+<br /><br />
+<table>
+    <thead align="left"> 
+        <th >Name</th> 
+        <th >Home</th> 
+        <th >Location</th>
+        <th >Allegiance</th>
+    </thead> 
+    <tbody> 
+        {{#each characters}} 
+        <tr> 
+            <td>{{fullname}}</td> 
+            <td>{{home}}</td> 
+            <td>{{location}}</td> 
+            <td>{{allegiance}}</td>
+            <td><button onclick="deleteCharacter({{id}})">Delete</button></td>
+            <td><a href="/characters/{{id}}">Update</a></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+
+</table> 

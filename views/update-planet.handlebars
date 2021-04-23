@@ -1,0 +1,16 @@
+<table>
+    <td align="center">
+    <td width="200px"><a href="/characters/">Characters</a></td>
+    <td width="200px"><a href="/planets/">Planets</a></td>
+    <td width="200px"><a href="/dragonballs/">Dragonballs</a></td>
+    <td width="200px"><a href="/techniques/">Techniques</a></td>
+    <td width="200px"><a href="/character_techniques/">Technique Masters</a></td>
+    </tr>
+</table>
+<h1>Update {{planet.name}}:</h1>
+<form id="update-planet" action="/planets" method="post">
+    Name: <input type="text" name="name" value="{{planet.name}}"><br>
+    Population: <input type="number" name="population" value="{{planet.population}}"><br>
+    Language: <input type="text" name="language" value="{{planet.language}}"><br>
+</form>
+<button onclick="updatePlanet({{planet.id}})">Update</button>

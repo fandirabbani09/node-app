@@ -1,0 +1,6 @@
+<h1>Update {{technique.name}}:</h1>
+<form id="update-technique" action="/techniques" method="post">
+    Name: <input type="text" name="name" value="{{technique.name}}"><br>
+    Damage: <input type="number" name="damage" value="{{technique.damage}}"><br>
+</form>
+<button onclick="updateTechnique({{technique.id}})">Update</button>

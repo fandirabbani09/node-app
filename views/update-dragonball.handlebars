@@ -1,0 +1,25 @@
+<table>
+    <td align="center">
+    <td width="200px"><a href="/characters/">Characters</a></td>
+    <td width="200px"><a href="/planets/">Planets</a></td>
+    <td width="200px"><a href="/dragonballs/">Dragonballs</a></td>
+    <td width="200px"><a href="/techniques/">Techniques</a></td>
+    <td width="200px"><a href="/character_techniques/">Technique Masters</a></td>
+    </tr>
+</table>
+<h1>Update the {{dragonball.id}}-star dragonball:</h1>
+<form id="update-dragonball" action="/dragonballs" method="post">
+    Possessor: <select name="possessor" id="person-selector" value="{{dragonball.possessor}}">
+        {{#each people}}
+        <option value="{{id}}">{{fullname}}</option>
+        {{/each}}
+    </select><br>
+    Location: <select name="location" id="planet-selector" value="{{dragonball.location}}">
+        {{#each planets}}
+        <option value="{{id}}">{{name}}</option>
+        {{/each}}
+    </select><br>
+</form>
+<button onclick="updateDragonball({{dragonball.id}})">Update</button>
+<script defer>selectperson({{dragonball.possessor}});</script>
+<script defer>selectplanet({{dragonball.location}});</script>
